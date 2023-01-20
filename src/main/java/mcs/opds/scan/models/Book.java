@@ -3,6 +3,8 @@ package mcs.opds.scan.models;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Book")
@@ -50,6 +52,18 @@ public class Book {
 
     @Column(name = "avail")
     private int avail;
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "book_author",
+            joinColumns = {@JoinColumn(name = "book_id")},
+            inverseJoinColumns = {@JoinColumn(name = "author_id")}
+    )
+    Set<Author> authors = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY,optional=true)
+    @JoinTable(name = "catalog", joinColumns = @JoinColumn(name = "id_book"), inverseJoinColumns = @JoinColumn(name = "id_catalog"))
+    private Catalog catalog;
 
     @Override
     public String toString() {

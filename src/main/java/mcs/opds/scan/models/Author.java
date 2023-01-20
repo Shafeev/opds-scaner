@@ -3,6 +3,10 @@ package mcs.opds.scan.models;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Entity
 @Table(name = "Author")
 public class Author {
@@ -20,6 +24,9 @@ public class Author {
 
     @Column(name = "lang_code")
     private int langCode;
+
+    @ManyToMany(mappedBy = "authors")
+    private Set<Book> books = new HashSet<>();
 
     @Override
     public String toString() {

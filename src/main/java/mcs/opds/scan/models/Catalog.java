@@ -2,6 +2,9 @@ package mcs.opds.scan.models;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "Catalog")
 public class Catalog {
@@ -22,6 +25,12 @@ public class Catalog {
 
     @Column(name = "cat_size")
     private int catSize;
+
+    @ManyToOne()
+    private Catalog parentCatalog;
+
+    @OneToMany(mappedBy = "parentCatalog")
+    private Set<Catalog> subCatalogs = new HashSet<>();
 
     @Override
     public String toString() {
