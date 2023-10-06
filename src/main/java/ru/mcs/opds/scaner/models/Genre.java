@@ -1,9 +1,9 @@
-package mcs.opds.scan.models;
+package ru.mcs.opds.scaner.models;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Genre")
+@Table(name = "genre")
 public class Genre {
     @Id
     @Column(name = "id")

@@ -1,4 +1,4 @@
-package mcs.opds.scan.models;
+package ru.mcs.opds.scaner.models;
 
 import jakarta.persistence.*;
 
@@ -61,7 +61,7 @@ public class Book {
     )
     Set<Author> authors = new HashSet<>();
 
-    @ManyToOne(fetch = FetchType.LAZY,optional=true)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinTable(name = "catalog", joinColumns = @JoinColumn(name = "id_book"), inverseJoinColumns = @JoinColumn(name = "id_catalog"))
     private Catalog catalog;
 

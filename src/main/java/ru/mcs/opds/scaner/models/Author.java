@@ -1,14 +1,14 @@
-package mcs.opds.scan.models;
+package ru.mcs.opds.scaner.models;
 
 
 import jakarta.persistence.*;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
+
 @Entity
-@Table(name = "Author")
+@Table(name = "author")
 public class Author {
 
     @Id
