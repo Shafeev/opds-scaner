@@ -1,4 +1,4 @@
-package ru.mcs.opds.scaner;
+package ru.simple.opds.scaner;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

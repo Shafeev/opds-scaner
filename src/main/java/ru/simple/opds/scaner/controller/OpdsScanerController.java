@@ -1,4 +1,4 @@
-package ru.mcs.opds.scaner.controller;
+package ru.simple.opds.scaner.controller;
 
 
 import org.springframework.stereotype.Controller;

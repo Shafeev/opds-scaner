@@ -1,6 +1,4 @@
-package ru.mcs.opds.scaner.models;
-
-
+package ru.simple.opds.scaner.models;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
